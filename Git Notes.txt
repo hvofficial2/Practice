@@ -1,0 +1,111 @@
+Untracked File-->Staged Files-->Commited Files
+
+Commands-
+-git init
+-git status
+-git add filename.extension
+-git add .
+-git commint -m "Comment"
+-git log
+
+//Get Back to last commit
+-git reset --hard "HEAD^"
+
+//To get back to any commit, copy the hash of that commit from "git log" and use the below: 
+-git reset <loghash>
+1863f60add35e226e743e7cdf68b3cc47329df82
+//At this point the deleted file will come back in unstaged area, now restore the file
+-git restore filename.txt
+
+//Deleting file/changes when file is in staged area
+-git stash
+-git stash clear
+
+//(Unstaging)
+-git restore --staged <filename>
+
+//Now suppose we have made few changes in code but have not commited, we dont want to commit these changes right now. but we dont want to delete them either. Now what we can do is, we can stash them.
+keeping this piece of code separatly(saved) and we will be back at the last commit.
+//First we need to stage the changes
+-git add .      
+-git stash
+//Now if you want those changes back
+-git stash pop
+//Nowif you want to delete(flush) those stashed chnages
+-git stash clear
+
+//GitHub
+//Now we need to connect our local git repo to remote
+-git remote add origin URL
+//Note: Here we have just connected the repos not shared our local files with remote yet
+//Origin is the name of the URL(by convention) we are mentioning here.
+
+//Pushing the files
+-git push origin master
+//Again, origin is the URL onwhich we are pushing files.
+//master is the branch on which we are pushing
+
+
+//Branching
+//List of branches
+-git branch --list
+
+//Create a new Branch on the current working branch
+-git branch Feature1
+//Here HEAD is still pointing on Master,to change it to feature branch
+-git checkout Feature1
+
+//Now if you want to perform both of these task at once.
+-git checkout -b Feature1
+
+//If we want to create a branch from any other branch
+-git checkout -b Feature1 <BranchFromWhichYouWantToCreateNew>
+
+//Merging
+//First switch to the branch you want to merge into
+-git checkout Feature1
+//Second merge the branch
+-git merge Feature2
+//Third delete the branch
+-git branch -d Feature2
+// -d if you want to delete branch after merging it
+// -D if you want to delete branch before merging it
+
+//Delete remote branch
+-git push <remote_name/origin> --delete <branch_name>
+
+
+//Working with Real Existing Projects
+//1. Fork it (We will get a copy of that project in our GitHub)
+//2. From our GitHub clone the project locally
+-git clone URL
+//3. Setup Upstream URL (This is the original URL of the project,From where we have forked), our URL is Origin.
+-git remote add upstream URL
+-get remote -v
+//4. Create a new branch for whatever new feature you want to work. Work on it.
+//5. Now you can push the changes in your FeatureBranch(local) to remote.
+-git push origin FeatureBranch 
+//6. At this point you can create a pull request to main(original/upstream) project.
+//7. They will test your PL and merge.
+//Pro-tip: We should always create new branch for all the changes. (OneFeatureUpdate-->OneBranch-->OnePL)
+
+//If I have removed a commit(ex: an added file) from local, but this commit is also available on remote.
+//1. Remove the commit from local using -git reset _____ 
+//2. Push the new clean structure in remote
+-git push origin FeatureBranch -f
+//As our local has one less commit than the remote we need to do forcefull PUSH using -f
+
+
+//Updating the Fork (The main copy that we took of the original project)
+//We can click on Fetch Upstream Button
+OR
+//1. First go to your Fork's main branch
+-git checkout main
+//2. Pull all the changes from Original Project's main branch
+-git fetch --all --prune
+//3. Now we need to reset main/origin to main/upstream 
+git reset --hard upstream/main
+OR
+//We can do all of this in a single Command
+-git pull upstream main
+

@@ -1,0 +1,12 @@
+java.lang.Object;
+public String toString();
+public int hasdCode();
+public boolean equals();
+public Object clone() throws CloneNotSupportedException;
+public Class getClass();
+finalize();
+wait() throws InterruptedException;
+wait(long ms) throws InterruptedException;
+wait(long ms,int ns) throws InterruptedException;
+notify();
+notifyAll();

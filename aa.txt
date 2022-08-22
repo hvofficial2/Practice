@@ -1,0 +1,28 @@
+Worked as a Java Developer in building web applications.
+
+
+Used Git and GitHub for version control and managing the source code.
+Employed working knowledge of JAVA, J2EE, and SQL programming languages.
+Worked in MYSQL Database, updating changes ,building procedures and database management.
+Participated in design and planning exercises for future software rollouts.
+
+In-depth knowledge of Card Transaction Lifecycle, Payment Cards and Chargebacks in the BFS domain.
+2 years of experience in BFS domain.
+Experience in writing and analyzing bugs and fixing defects.
+Resolved system test and validation problems to provide normal program functioning.
+Tested completed projects for functionality and implemented changes to production methods to rectify issues in final products.
+Analyzing the issues and resolving the same, proposing a workaround to maintain business continuity and
+ensuring minimum business downtime. Identifying the critical issues and taking prompt and effective actions
+spontaneously .
+Followed Agile methodology that included iterative application development and weekly sprints and standup meetings.
+An Excellent Team Player with a good problem-solving approach having strong communication, leadership skills
+and ability to work in a time-constrained and team-oriented environment. 
+
+
+
+######################################################################################################
+Closely worked with QA and Production Support to debug and analyze the production issues.
+
+
+
+
